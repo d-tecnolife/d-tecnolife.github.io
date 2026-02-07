@@ -1,5 +1,4 @@
-{{- $title := cond (ne .Title "") (printf "%s | %s" .Title .Site.Title)
-.Site.Title -}}
+{{- $title := cond (and (ne .Title "") (not .IsHome)) (printf "%s | %s" .Title .Site.Title) .Site.Title -}}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
