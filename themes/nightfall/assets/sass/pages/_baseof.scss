@@ -1,0 +1,51 @@
+@use "../utils/variables" as v;
+
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #particles-js {
+    display: none;
+  }
+}
+
+.content {
+  text-align: center;
+  flex: 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  flex: 1 auto;
+
+}
+
+.main {
+  height: 100%;
+
+  @media only screen and (min-width: v.$breakLarge) {
+    width: v.$width;
+  }
+
+  @media screen and (max-width: v.$breakLarge) {
+    width: 100%;    
+  }
+}
